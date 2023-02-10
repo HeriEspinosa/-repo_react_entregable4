@@ -1,0 +1,15 @@
+* {
+box-sizing: border-box;
+padding: 0;
+margin: 0;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+input button {
+  outline: none;
+  border: none;
+}
