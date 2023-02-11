@@ -1,0 +1,131 @@
+.App{
+    display: flex;
+}
+
+.container{
+    width: 80%;
+    overflow: hidden;
+}
+
+.container__form{
+    background-color: whitesmoke;
+    display: grid;
+    justify-content: center;
+    width: 100%;
+    max-width: 380px; 
+    height: max-content;
+    border-radius: 0.7em;
+}
+
+.container__card {
+    background-color: #6CB09E;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5em;
+    padding: 1em 0.2em;
+}
+
+.form__users {
+    background-color: whitesmoke;
+    width: 290px;
+    padding: 3em 1em;
+    height: max-content;
+    border-radius: 0.7em;
+    display: grid;
+    gap: 0.5em;
+}
+
+.form__users div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.form__title {
+    margin-bottom: 0.8em;
+    text-align: center;
+}
+
+.form__users  button{
+    background-color: #0081C9;
+    width: 100%;
+    padding: 0.7em;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    color: whitesmoke;
+}
+
+.show__form {
+    color: whitesmoke;
+    background-color: #6CB09E;
+    box-shadow: 0px 1px 1px 2px #0006;
+    display: block;
+    margin: 0 auto;
+    padding: 0.5em;
+    font-weight: bold;
+    width: 100px;
+}
+
+.app__form {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0003;
+    backdrop-filter: blur(3px);
+    transform: scale(0);
+    transition: transform 0.5s ease;
+}
+
+.app__form-visible {
+    transform: scale(1);
+}
+
+
+.banner {
+    margin-bottom: -10px;
+    background-color: #1C315E;
+    height: 220px;
+    border-radius: 0 0 3em 3em;
+}
+.banner img {
+    height: 250px;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: -80px;
+    margin-top: -30px;
+}
+.banner h1 {
+    color: whitesmoke;
+    text-shadow: 1px 1px 2px whitesmoke;
+    margin: -50px;
+    font-size: 2.2rem;
+    text-align: center;
+    margin: 0 auto;
+    animation: anim_arrow linear 1s infinite;
+}
+
+@keyframes anim_arrow {
+    20%{ transform: translateY(-10px);}
+    40%{ transform: translateY(-15px);}
+    80%{ transform: translateY(-5px);}
+    100%{ transform: translateY(-1px);}
+}
+
+
+.banner__right {
+    background-color: #1C315E;
+    width: 20%;
+}
+.banner__letter {
+    text-align: center;
+    padding: 1em;
+    color: #6CB09E;
+}

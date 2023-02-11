@@ -1,0 +1,69 @@
+.card  {
+    padding: 0.5em;
+    width: 250px;
+    border: 2px solid grey;
+    background-color: whitesmoke;
+    box-shadow: 0px 2px 1px #000000b1;
+}
+
+.card__name {
+    text-align: center;
+    padding-bottom: 0.5em;
+}
+
+.card hr {
+    border: 1px solid #dedddd8d;
+    margin-bottom: 0.5em;
+}
+
+.card ul {
+    list-style: none;
+}
+.card ul li{
+    display: flex;
+    flex-direction: column;
+    padding: 0.3em 0.2em;
+    font-weight: 400;
+}
+.card ul li span{
+    font-weight: bold;
+    color: #181D31;
+}
+
+.bxs-gift {
+    color: rgba(14, 0, 139, 0.771);
+}
+.bx-mail-send {
+    color: green;
+}
+
+.card__btn {
+    display: flex;
+    gap: 0.5em;
+    justify-content: end;
+}
+.card__btn_delete {
+    background-color: #D93F3F;
+    padding: 0.3em 0.5em;
+    cursor: pointer;
+    font-size: 0.95rem;
+    border-radius: 0.3em;
+    transition: transform 3s ease;
+}
+.bx-trash {
+    color: white;
+}
+.card__btn_delete:hover {
+    transform: scale(1.02);
+}
+.card__btn_update {
+    background-color: lightgray;
+    padding: 0.3em 0.5em;
+    font-size: 0.95rem;
+    border-radius: 0.3em;
+    cursor: pointer;
+    transition: transform 3s ease;
+}
+.card__btn_update:hover {
+    transform: scale(1.02);
+}

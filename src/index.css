@@ -1,7 +1,13 @@
+/* --- RESET ---- */
+
 * {
 box-sizing: border-box;
 padding: 0;
 margin: 0;
+}
+
+body {
+  background-color: #181D31;
 }
 
 img {
@@ -9,7 +15,10 @@ img {
   display: block;
 }
 
-input button {
-  outline: none;
+input {
+  outline: 0;
+} 
+
+button { 
   border: none;
 }
