@@ -6,6 +6,8 @@ import FormUser from './components/FormUser'
 import UserCard from './components/UserCard'
 import Footer from './components/Footer'
 import BannerRight from './components/BannerRight'
+import swal from 'sweetalert';
+import defaultValues from './utils/defaultValues'
 
 function App() {
 
@@ -20,8 +22,6 @@ function App() {
       .catch(err => console.log(err))
   }
 
-  console.log(users);
-
   useEffect(() => {
     getAllUsers()
   }, [])
@@ -31,9 +31,17 @@ function App() {
     axios.post(url, data)
       .then(res => {
         console.log(res.data)
+        sweetSuccess()
         getAllUsers()
+        handleHiddenForm()
+
       })
-      .catch(err => console.log(err))
+      .catch(err => {
+        sweetEmptyFields()
+        console.log(err)
+      }
+
+      )
   }
 
   const deleteUserById = (id) => {
@@ -50,8 +58,10 @@ function App() {
     const url = `https://users-crud.academlo.tech/users/${id}/`
     axios.patch(url, data)
       .then(res => {
-        getAllUsers()
+        sweetSuccessUpdate()
         setUpdateUser()
+        getAllUsers()
+        handleHiddenForm()
       })
       .catch(err => console.log(err))
   }
@@ -63,6 +73,36 @@ function App() {
   const handleHiddenForm = () => {
     setIsOpen(false)
   }
+
+  const sweetSuccess = () => {
+    swal({
+      title: "User created successfully",
+      text: "Thanks for using our service",
+      icon: "success",
+      button: "Accept",
+      timer: "3000"
+    })
+  }
+
+  const sweetEmptyFields = () => {
+    sweetAlert({
+      title: "You have empty fields",
+      text: "We do not accept empty fields",
+      icon: "warning",
+      buttons: "Accept"
+    })
+  }
+
+  const sweetSuccessUpdate = () => {
+    swal({
+      title: "User updated successfully",
+      text: "Thanks for using our service",
+      icon: "success",
+      button: "Accept",
+      timer: "3000"
+    })
+  }
+
 
   return (
     <div className="App">
@@ -96,12 +136,9 @@ function App() {
           </div>
 
         </div>
-
       </div>
-
-
-
       <Footer />
+
     </div>
 
   )

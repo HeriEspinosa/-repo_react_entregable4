@@ -14,15 +14,24 @@ const FormUser = ({ createNewUser, updateUser, updateUserById, handleHiddenForm 
     }, [updateUser])
 
     const sumit = data => {
+
         if (updateUser) {
-            updateUserById(updateUser.id, data)
-            handleHiddenForm()
+            updateUserById(updateUser.id, data);
         }
         else {
             createNewUser(data);
-            handleHiddenForm()
         }
-        reset(defaultValues)
+
+        let cont = 0;
+        let id = setInterval(function () {
+            let cont = 0;
+            reset(defaultValues)
+        }, 1000);
+        cont++;
+
+        if (cont == 1) {
+            clearInterval(id);
+        }
     }
 
     const handleCLose = () => {
@@ -77,7 +86,8 @@ const FormUser = ({ createNewUser, updateUser, updateUserById, handleHiddenForm 
                 <button className="form__button">{updateUser ?
                     'UPDATE'
                     :
-                    'CREATE'}
+                    'CREATE'
+                }
                 </button>
             </form>
         </section>

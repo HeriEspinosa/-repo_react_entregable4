@@ -9,7 +9,7 @@
     display: grid;
     justify-content: center;
     text-align: center;
-    gap: 0.5em;
+    gap: 1em;
     padding: 1em;
 }
 
@@ -19,7 +19,7 @@
 
 .info__redes_social {
     display: grid;
-    gap: 0.5em;
+    gap: 0.8em;
 }
 .info__redes_social p a{
     color: aliceblue;
