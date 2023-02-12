@@ -32,7 +32,7 @@ const FormUser = ({ createNewUser, updateUser, updateUserById, handleHiddenForm 
 
     return (
         <section className="container__form" >
-            <form className="form__users flex" action="" onSubmit={handleSubmit(sumit)}>
+            <form className="form__users flex" action="" autoComplete="off" onSubmit={handleSubmit(sumit)}>
                 <h3 onClick={handleCLose} className="form__close">X</h3>
                 <h1 className="form__title">* New User *</h1>
 
