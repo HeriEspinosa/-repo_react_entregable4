@@ -26,6 +26,29 @@
     font-size: 2.5rem;
 }
 
+.footer__info {
+    text-align: center;
+    padding: 1em 1.2em;
+    color: #6CB09E;
+}
+
+.info__code {  
+    display: grid;
+    gap: 0.8em;
+}
+
+.info__code a {  
+    text-decoration: none;
+}
+.info__code a p {
+    font-weight: 400;
+    color:azure;
+}
+.info__code a p span {
+    color: lawngreen;
+    cursor: pointer;
+}
+
 @media (min-width:700px) {
     .banner__right h3 {
         font-size: 1.6rem;

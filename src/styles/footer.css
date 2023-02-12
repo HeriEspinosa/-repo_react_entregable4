@@ -1,23 +1,6 @@
 .footer {
     background: linear-gradient(180deg, rgba(28,49,94,1) 53%, rgba(108,176,158,1) 100%);
 }
-.footer__info {
-    text-align: center;
-    padding: 1em 1.2em;
-    color: #6CB09E;
-}
-
-.info__code a {  
-    text-decoration: none;
-}
-.info__code a p {
-    font-weight: 400;
-    color:azure;
-}
-.info__code a p span {
-    color: lawngreen;
-    cursor: pointer;
-}
 
 hr {
     opacity: 0.3;
