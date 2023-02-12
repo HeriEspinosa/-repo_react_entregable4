@@ -1,15 +1,20 @@
 .card  {
     padding: 0.5em;
     width: 270px;
-    height: 200px;
+    height: 225px;
     border: 2px solid grey;
     background-color: #d1d1d1e0;
     box-shadow: 0px 2px 1px #000000c1;
+    overflow: hidden;
 }
 
 .card__name {
+    display: grid;
+    align-items: center;
     text-align: center;
     padding-bottom: 0.5em;
+    font-size: 0.9rem;
+    height: 45px;
 }
 .card hr {
     border: 1px solid #deddddc5;
@@ -24,6 +29,9 @@
     flex-direction: column;
     padding: 0.3em 0.2em;
     font-weight: 400;
+}
+.card ul li:nth-child(1){
+    height: 65px;
 }
 .card ul li span{
     font-weight: bold;
@@ -41,6 +49,8 @@
     display: flex;
     gap: 0.5em;
     justify-content: end;
+    align-items: center;
+    padding-top: 2px;
 }
 .card__btn_delete {
     background-color: #D93F3F;
@@ -70,10 +80,16 @@
 
 @media (min-width:700px) {
     .card  {
-        width: 300px;
-        height: 220px;
+        width: 320px;
+        height: 250px;
     }
     .card ul li{
         font-size: 1rem;
+    }
+    .card__name {
+        font-size: 1rem;
+    }
+    .card ul li:nth-child(1){
+        height: 70px;
     }
 }
