@@ -1,15 +1,19 @@
 .container {
     display: flex;
     justify-content: space-between;
+    overflow: hidden;
 }
 .container__card {
-    width: 100%;
+    width: 80%;
     margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 0.5em;
     padding: 1em 0.2em;
+}
+.container__banner {
+    width: 20%;
 }
 
 .show__form {
@@ -50,9 +54,9 @@
 
 .banner__right {
     background-color: #1C315E;
-    width: 20%;
     border-radius: 2em 2em 0 0;
     margin-top: 32px;
+    height: 100%;
 }
 .banner__letter {
     text-align: center;

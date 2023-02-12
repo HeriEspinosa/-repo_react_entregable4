@@ -91,7 +91,10 @@ function App() {
               ))
             }
           </div>
-          <BannerRight />
+          <div className="container__banner">
+            <BannerRight />
+          </div>
+
         </div>
 
       </div>
