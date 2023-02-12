@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import defaultValues from "../utils/defaultValues";
+import '../styles/formuser.css'
 
 const FormUser = ({ createNewUser, updateUser, updateUserById, handleHiddenForm }) => {
 
@@ -26,32 +27,51 @@ const FormUser = ({ createNewUser, updateUser, updateUserById, handleHiddenForm 
 
     return (
         <section className="container__form" >
-            <form className="form__users" action="" onSubmit={handleSubmit(sumit)}>
-                <h2 className="form__title">Insert User</h2>
+            <form className="form__users flex" action="" onSubmit={handleSubmit(sumit)}>
+                <h1 className="form__title">Insert User</h1>
+
                 <div>
-                    <label htmlFor="firstname" placeholder="Insert your first name">First Name: </label>
-                    <input {...register('first_name')} type="text" id="firstName" />
+                    <span className="name__span"><i class='bx bx-user'></i></span>
+                    <div className="name flex">
+                        <div>
+                            <label htmlFor="firstname">First Name: </label>
+                            <input {...register('first_name')} type="text" id="firstName" placeholder="First name" />
+                        </div>
+                        <div>
+                            <label htmlFor="lastname"> Last Name: </label>
+                            <input {...register('last_name')} type="text" id="lastName" placeholder="Last name" />
+                        </div>
+                    </div>
                 </div>
+
                 <div>
-                    <label htmlFor="lastname" placeholder="Insert your last name"> Last Name: </label>
-                    <input {...register('last_name')} type="text" id="lastName" />
+                    <i class='bx bx-envelope'></i>
+                    <div className="user flex">
+                        <div>
+                            <label htmlFor="email">Email: </label>
+                            <input {...register('email')} type="email" id="email" placeholder="Email" />
+                        </div>
+                        <div>
+                            <label htmlFor="password">Password: </label>
+                            <input {...register('password')} type="password" id="password" placeholder="Password" />
+                        </div>
+                    </div>
                 </div>
+
                 <div>
-                    <label htmlFor="email" placeholder="Insert your email">Email: </label>
-                    <input {...register('email')} type="email" id="email" />
+                    <i class='bx bxs-balloon'></i>
+                    <div className="birthday flex">
+                        <div>
+                            <label htmlFor="birthday">Birthday: </label>
+                            <input {...register('birthday')} type="date" id="birthday" />
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <label htmlFor="password" placeholder="Insert your password">Password: </label>
-                    <input {...register('password')} type="password" id="password" />
-                </div>
-                <div>
-                    <label htmlFor="birthday" placeholder="Insert your birthday">Birthday: </label>
-                    <input {...register('birthday')} type="date" id="birthday" />
-                </div>
+
                 <button>{updateUser ?
-                    'Update'
+                    'UPDATE'
                     :
-                    'Create'}
+                    'CREATE'}
                 </button>
             </form>
         </section>

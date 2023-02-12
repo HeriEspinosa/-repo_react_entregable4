@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
-import './App.css'
+import './styles/App.css'
 import Banner from './components/Banner'
 import FormUser from './components/FormUser'
 import UserCard from './components/UserCard'
@@ -60,13 +60,12 @@ function App() {
     setIsOpen(false)
   }
 
-  console.log(users);
   return (
 
     <div className="App">
-      <div className='container'>
+      <div className="container">
         <Banner />
-        <button className='show__form' onClick={handleShowForm}>Register</button>
+        <button className="show__form" onClick={handleShowForm}>Register</button>
         <div className={`app__form ${isOpen && 'app__form-visible'}`}>
           <FormUser
             createNewUser={createNewUser}
