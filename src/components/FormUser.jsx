@@ -25,13 +25,19 @@ const FormUser = ({ createNewUser, updateUser, updateUserById, handleHiddenForm 
         reset(defaultValues)
     }
 
+    const handleCLose = () => {
+        handleHiddenForm()
+        reset(defaultValues)
+    }
+
     return (
         <section className="container__form" >
             <form className="form__users flex" action="" onSubmit={handleSubmit(sumit)}>
-                <h1 className="form__title">Insert User</h1>
+                <h3 onClick={handleCLose} className="form__close">X</h3>
+                <h1 className="form__title">* New User *</h1>
 
                 <div>
-                    <span className="name__span"><i class='bx bx-user'></i></span>
+                    <span className="name__span"><i className='bx bx-user'></i></span>
                     <div className="name flex">
                         <div>
                             <label htmlFor="firstname">First Name: </label>
@@ -45,7 +51,7 @@ const FormUser = ({ createNewUser, updateUser, updateUserById, handleHiddenForm 
                 </div>
 
                 <div>
-                    <i class='bx bx-envelope'></i>
+                    <i className='bx bx-envelope'></i>
                     <div className="user flex">
                         <div>
                             <label htmlFor="email">Email: </label>
@@ -59,7 +65,7 @@ const FormUser = ({ createNewUser, updateUser, updateUserById, handleHiddenForm 
                 </div>
 
                 <div>
-                    <i class='bx bxs-balloon'></i>
+                    <i className='bx bxs-balloon'></i>
                     <div className="birthday flex">
                         <div>
                             <label htmlFor="birthday">Birthday: </label>
@@ -68,7 +74,7 @@ const FormUser = ({ createNewUser, updateUser, updateUserById, handleHiddenForm 
                     </div>
                 </div>
 
-                <button>{updateUser ?
+                <button className="form__button">{updateUser ?
                     'UPDATE'
                     :
                     'CREATE'}

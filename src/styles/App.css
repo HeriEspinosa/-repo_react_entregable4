@@ -1,14 +1,9 @@
-.App{
+.container {
     display: flex;
-    height: 100vh;
-}
-
-.container{
-    width: 80%;
-    overflow: hidden;
+    justify-content: space-between;
 }
 .container__card {
-    background-color: #6CB09E;
+    width: 100%;
     margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
@@ -21,12 +16,18 @@
     color: whitesmoke;
     background-color: #6CB09E;
     box-shadow: 0px 1px 1px 2px #0006;
+    text-shadow: 0px 1px 1px #0006;
     display: block;
     margin: 0 auto;
     padding: 0.7em;
     font-weight: bold;
-    width: 120px;
+    font-size: 1.1rem;
+    width: 150px;
     cursor: pointer;
+    transition: transform 0.5s ease;
+}
+.show__form:hover {
+    transform: scale(1.02);
 }
 .app__form {
     width: 100%;
@@ -44,11 +45,14 @@
 }
 .app__form-visible {
     transform: scale(1);
+    z-index: 10000;
 }
 
 .banner__right {
     background-color: #1C315E;
     width: 20%;
+    border-radius: 2em 2em 0 0;
+    margin-top: 32px;
 }
 .banner__letter {
     text-align: center;

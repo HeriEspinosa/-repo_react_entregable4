@@ -1,21 +1,20 @@
 .card  {
     padding: 0.5em;
-    width: 250px;
+    width: 300px;
+    height: 220px;
     border: 2px solid grey;
-    background-color: whitesmoke;
-    box-shadow: 0px 2px 1px #000000b1;
+    background-color: #d1d1d1e0;
+    box-shadow: 0px 2px 1px #000000c1;
 }
 
 .card__name {
     text-align: center;
     padding-bottom: 0.5em;
 }
-
 .card hr {
-    border: 1px solid #dedddd8d;
+    border: 1px solid #deddddc5;
     margin-bottom: 0.5em;
 }
-
 .card ul {
     list-style: none;
 }
@@ -48,7 +47,7 @@
     cursor: pointer;
     font-size: 0.95rem;
     border-radius: 0.3em;
-    transition: transform 3s ease;
+    transition: transform 0.5s ease;
 }
 .bx-trash {
     color: white;
@@ -62,7 +61,7 @@
     font-size: 0.95rem;
     border-radius: 0.3em;
     cursor: pointer;
-    transition: transform 3s ease;
+    transition: transform 0.5s ease;
 }
 .card__btn_update:hover {
     transform: scale(1.02);
