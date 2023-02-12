@@ -68,45 +68,43 @@
 }
 .form__users  button{
     background-color: #0081C9;
-    width: 100%;
+    width: 70%;
+    margin: 0 auto;
     padding: 0.7em;
     cursor: pointer;
     font-size: 1.2rem;
     font-weight: bold;
     letter-spacing: 0.1em;
     color: whitesmoke;
+    border-radius: 1em;
 }
 
 @media (min-width:400px) {
 .name div,
 .user div{
-    display: flex;
     flex-direction:row;
-    justify-content: space-between;
 }
 .birthday div {
-    display: flex;
     flex-direction: row;
-    justify-content: space-between;
 }
 .container__form{
-    height: 60%;
+    height: 70%;
 }
 }
 
 @media (min-width:700px) {
 .form__users input {
-font-size: 1.2rem;
+font-size: 1.1rem;
 }
 .name div,
 .user div{
-    font-size: 1.3rem;
+    font-size: 1.1rem;
 }
 .birthday{
-    font-size: 1.3rem;
+    font-size: 1.1rem;
 }
 .container__form{
-    height: 70%;
+    height: 80%;
     max-width: 500px; 
 }
 }
@@ -115,4 +113,7 @@ font-size: 1.2rem;
     .container__form{
         height: 80%;
     }
+    .form__users input {
+        font-size: 1.2rem;
+        }
     }
