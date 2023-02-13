@@ -23,7 +23,6 @@ const BannerRight = () => {
                     <a href="https://github.com/HeriEspinosa/-repo_react_entregable4.git" target='blank'><p>Hecha un Vistazo a mi Codigo <span>Aqui</span></p></a>
                 </section>
             </section>
-
         </div>
     )
 }
