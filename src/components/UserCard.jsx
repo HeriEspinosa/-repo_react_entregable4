@@ -1,9 +1,10 @@
 import React from 'react'
 import '../styles/usercard.css'
 
-const UserCard = ({ user, deleteUserById, setUpdateUser, handleShowForm }) => {
+const UserCard = ({ user, deleteUserById, setUpdateUser, handleShowForm, sweetDelete }) => {
 
     const handleDelete = () => {
+        sweetDelete()
         deleteUserById(user.id)
     }
 

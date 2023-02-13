@@ -104,10 +104,19 @@ function App() {
       text: "Thanks for using our service",
       icon: "success",
       button: "Accept",
-      timer: "3000"
+      timer: "2800"
     })
   }
 
+  const sweetDelete = () => {
+    swal({
+      title: "User deleted successfully",
+      text: "Thanks for using our service",
+      icon: "error",
+      buttons: "accept",
+      timer: "2800"
+    })
+  }
 
   return (
     <div className="App">
@@ -139,6 +148,7 @@ function App() {
                         deleteUserById={deleteUserById}
                         setUpdateUser={setUpdateUser}
                         handleShowForm={handleShowForm}
+                        sweetDelete={sweetDelete}
                       />
                     ))
                   }
