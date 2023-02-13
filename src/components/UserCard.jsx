@@ -25,7 +25,6 @@ const UserCard = ({ user, deleteUserById, setUpdateUser, handleShowForm }) => {
                 <button onClick={handleDelete} className='card__btn_delete'><i className='bx bx-trash'></i></button>
                 <button onClick={handleUpdate} className='card__btn_update'><i className='bx bxs-edit-alt'></i></button>
             </div>
-
         </article>
     )
 }
