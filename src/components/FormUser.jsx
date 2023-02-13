@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import defaultValues from "../utils/defaultValues";
 import '../styles/formuser.css'
 
-const FormUser = ({ createNewUser, updateUser, updateUserById, handleHiddenForm }) => {
+const FormUser = ({ createNewUser, updateUser, updateUserById, handleHiddenForm, setUpdateUser }) => {
 
     const { reset, register, handleSubmit } = useForm()
 
@@ -22,21 +22,13 @@ const FormUser = ({ createNewUser, updateUser, updateUserById, handleHiddenForm 
             createNewUser(data);
         }
 
-        let cont = 0;
-        let id = setInterval(function () {
-            let cont = 0;
-            reset(defaultValues)
-        }, 1000);
-        cont++;
-
-        if (cont == 1) {
-            clearInterval(id);
-        }
+        reset(defaultValues)
     }
 
     const handleCLose = () => {
         handleHiddenForm()
         reset(defaultValues)
+        setUpdateUser()
     }
 
     return (
@@ -49,12 +41,12 @@ const FormUser = ({ createNewUser, updateUser, updateUserById, handleHiddenForm 
                     <span className="name__span"><i className='bx bx-user'></i></span>
                     <div className="name flex">
                         <div>
-                            <label htmlFor="firstname">First Name: </label>
-                            <input {...register('first_name')} type="text" id="firstName" placeholder="First name" />
+                            {/* <label htmlFor="firstname">First Name: </label> */}
+                            <input {...register('first_name')} type="text" id="firstName" placeholder=" First name" />
                         </div>
                         <div>
-                            <label htmlFor="lastname"> Last Name: </label>
-                            <input {...register('last_name')} type="text" id="lastName" placeholder="Last name" />
+                            {/* <label htmlFor="lastname"> Last Name: </label> */}
+                            <input {...register('last_name')} type="text" id="lastName" placeholder=" Last name" />
                         </div>
                     </div>
                 </div>
@@ -63,12 +55,12 @@ const FormUser = ({ createNewUser, updateUser, updateUserById, handleHiddenForm 
                     <i className='bx bx-envelope'></i>
                     <div className="user flex">
                         <div>
-                            <label htmlFor="email">Email: </label>
-                            <input {...register('email')} type="email" id="email" placeholder="Email" />
+                            {/* <label htmlFor="email">Email: </label> */}
+                            <input {...register('email')} type="email" id="email" placeholder=" example@email.com" />
                         </div>
                         <div>
-                            <label htmlFor="password">Password: </label>
-                            <input {...register('password')} type="password" id="password" placeholder="Password" />
+                            {/* <label htmlFor="password">Password: </label> */}
+                            <input {...register('password')} type="password" id="password" placeholder=" ********" />
                         </div>
                     </div>
                 </div>
@@ -77,7 +69,7 @@ const FormUser = ({ createNewUser, updateUser, updateUserById, handleHiddenForm 
                     <i className='bx bxs-balloon'></i>
                     <div className="birthday flex">
                         <div>
-                            <label htmlFor="birthday">Birthday: </label>
+                            <label htmlFor="birthday">Birthday</label>
                             <input {...register('birthday')} type="date" id="birthday" />
                         </div>
                     </div>

@@ -8,17 +8,22 @@ import Footer from './components/Footer'
 import BannerRight from './components/BannerRight'
 import swal from 'sweetalert';
 import defaultValues from './utils/defaultValues'
+import Loading from './components/Loading'
 
 function App() {
 
   const [users, setUsers] = useState()
   const [updateUser, setUpdateUser] = useState()
   const [isOpen, setIsOpen] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
 
   const getAllUsers = () => {
     const url = 'https://users-crud.academlo.tech/users/'
     axios.get(url)
-      .then(res => setUsers(res.data))
+      .then(res => {
+        setUsers(res.data)
+        setIsLoading(false)
+      })
       .catch(err => console.log(err))
   }
 
@@ -106,41 +111,48 @@ function App() {
 
   return (
     <div className="App">
-      <div className="main">
-        <Banner />
-        <button className="show__form" onClick={handleShowForm}>REGISTER</button>
-        <div className={`app__form ${isOpen && 'app__form-visible'}`}>
-          <FormUser
-            createNewUser={createNewUser}
-            updateUser={updateUser}
-            updateUserById={updateUserById}
-            handleHiddenForm={handleHiddenForm}
-          />
-        </div>
-        <div className="container">
-          <div className="container__card">
-            {
-              users?.map(user => (
-                <UserCard
-                  key={user.id}
-                  user={user}
-                  deleteUserById={deleteUserById}
+
+      {
+        isLoading ?
+          <Loading />
+          :
+          <>
+            <div className="main">
+              <Banner />
+              <button className="show__form" onClick={handleShowForm}><i className='bx bx-user-plus'></i> NEW REGISTER</button>
+              <div className={`app__form ${isOpen && 'app__form-visible'}`}>
+                <FormUser
+                  createNewUser={createNewUser}
+                  updateUser={updateUser}
+                  updateUserById={updateUserById}
+                  handleHiddenForm={handleHiddenForm}
                   setUpdateUser={setUpdateUser}
-                  handleShowForm={handleShowForm}
                 />
-              ))
-            }
-          </div>
-          <div className="container__banner">
-            <BannerRight />
-          </div>
+              </div>
+              <div className="container">
+                <div className="container__card">
+                  {
+                    users?.map(user => (
+                      <UserCard
+                        key={user.id}
+                        user={user}
+                        deleteUserById={deleteUserById}
+                        setUpdateUser={setUpdateUser}
+                        handleShowForm={handleShowForm}
+                      />
+                    ))
+                  }
+                </div>
+                <div className="container__banner">
+                  <BannerRight />
+                </div>
 
-        </div>
-      </div>
-      <Footer />
-
+              </div>
+            </div>
+            <Footer />
+          </>
+      }
     </div>
-
   )
 }
 

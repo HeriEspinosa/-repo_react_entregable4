@@ -5,9 +5,8 @@
 
 .container__form{
     background-color: #e2e2e2;
-    padding: 1.2em;
-    width: 92%;
-    max-width: 400px; 
+    width: 90%;
+    padding: 1em;
     border-radius: 0.7em;
     box-shadow: 0px 1px 1px 1px #0006;
     position: relative;
@@ -15,17 +14,22 @@
 .form__users {
     background-color: #e2e2e2;
     border-radius: 0.7em;
-    gap: 1em;
+    gap: 0.8em;
+    padding: 0.5em;
+    justify-content: center;
+    align-items: center;
 }
 .form__users input {
     padding: 0.1em 0 0.1em 0.5em;
+    font-size: 0.8rem;
+    width: 180px;
 }
 .form__users > div {
     display: flex;
     align-items: center;
     gap: 0.2em;
+    font-weight: 600;
 }
-
 .form__close {
     position: absolute;
     top: 8px;
@@ -42,38 +46,30 @@
 .name,
 .user{
     border: 2px solid #00000089;
-    padding: 1em 0.5em;
+    padding: 0.5em;
     gap: 0.5em;
-    width: 100%;
-}
-.name div,
-.user div{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 }
 .birthday{
     border: 2px solid #00000089;
-    display: flex;
-    justify-content: center;
-    padding: 1em;
-    width: 100%;
+    padding: 0.5em;
 }
 .birthday div {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    font-size: 0.8  rem;
+    color: #757575b9;
+    display: grid;
+    gap: 0.2em;
+    text-align: center;
 }
 .bxs-balloon,
 .bx-envelope,
 .bx-user {
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 .form__title {
     margin-bottom: 0.5em;
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: #0081C9;
     margin-top: 0.4em;
     letter-spacing: 0.1em;
@@ -81,10 +77,12 @@
 .form__button{
     background-color: #0081C9;
     width: 50%;
+    min-width: 100px;
     margin: 0 auto;
+    margin-top: 10px;
     padding: 0.7em;
     cursor: pointer;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: bold;
     letter-spacing: 0.1em;
     color: whitesmoke;
@@ -95,8 +93,10 @@
     transform: scale(1.02);
 }
 
-
 @media (min-width:400px) {
+.container__form{
+    width: 80%;
+}
 .name div,
 .user div{
     flex-direction:row;
@@ -106,24 +106,71 @@
 }
 }
 
-@media (min-width:700px) {
-.form__users input {
-font-size: 1.1rem;
+@media (min-width:500px) {
+    .container__form{
+        width: 70%;
+    }
+    .form__users input::placeholder{
+    font-size: 0.8rem;
+    }
 }
-.name div,
-.user div{
-    font-size: 1.1rem;
+
+@media (min-width:600px) {
+    .container__form{
+        width: 60%;
+    }
+    .form__users input {
+        width: 200px;
+    }
+    .birthday{
+        padding: 0.8em;
+    }
+    .name,
+    .user{
+        padding: 0.8em;
+    }
+}
+
+@media (min-width:700px) {
+.container__form{
+    width: 50%;
+    padding: 1em 1.5em;
 }
 .birthday{
-    font-size: 1.1rem;
+    padding: 0.9em;
+}
+.name,
+.user{
+    padding: 0.9em;
 }
 .container__form{
     max-width: 500px; 
 }
+.form__close {
+    font-size: 1rem;
+    top: 8px;
+    right: 18px;
+}
 }
 
 @media (min-width:900px) {
-    .form__users input {
-        font-size: 1.2rem;
+.container__form{
+    width: 40%;
+    padding: 2em;
+}
+    .form__close {
+        font-size: 1.1rem;
+        top: 8px;
+    }
+}
+
+@media (min-width:1100px) {
+    .container__form{
+        width: 30%;
+        padding: 2em;
+    }
+        .form__close {
+            font-size: 1.2rem;
+            top: 8px;
         }
     }
